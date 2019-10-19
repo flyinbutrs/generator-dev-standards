@@ -1,0 +1,12 @@
+stages:
+  - publish
+python_publish:
+  stage: publish
+  only:
+    - '/^v(\d+)\.(\d+)\.(\d+)(.[a-z0-9]+)?$/'
+  except:
+    - branches
+  script:
+    - $(./.twine_vars)
+    - python setup.py sdist bdist_wheel
+    - twine upload dist/*

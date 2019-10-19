@@ -1,0 +1,93 @@
+{
+  "name": "generator-dev-standards",
+  "version": "0.1.0",
+  "description": "A generator for using npm development and release tools with any language",
+  "homepage": "https://github.com/flyinbutrs/generator-dev-standards",
+  "author": {
+    "name": "Dan Rosenbloom",
+    "email": "dan7348@gmail.com",
+    "url": "https://github.com/flyinbutrs"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/app/index.js",
+  "keywords": [
+    "yeoman",
+    "generator",
+    "standard-version",
+    "yeoman-generator"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.3",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "standard-version": "^7.0.0",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^2.0.0",
+    "yo": "^3.1.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "deepmerge": "^4.0.0",
+    "generator-version-file": "^0.3.1",
+    "hasbin": "^1.2.3",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
+    "npm-check-updates": "^3.1.20",
+    "yeoman-generator": "^4.0.1",
+    "yosay": "^2.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "release": "standard-version -a",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "repository": {
+    "url": "https://github.com/flyinbutrs/generator-dev-standards.git"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "*.js": [
+    "eslint --fix",
+    "git add"
+  ],
+  "*.json": [
+    "prettier --write",
+    "git add"
+  ],
+  "*.py": [
+    "pipenv run pylint"
+  ],
+  "*.rb": [
+    "rubocop --auto-correct"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "generator-version-file": {
+    "promptValues": {
+      "language": "Javascript",
+      "path": "generators/app"
+    },
+    "generator_version": "0.3.0"
+  },
+  "generator-dev-standards": {
+    "promptValues": {
+      "language": "Javascript",
+      "serverless": false
+    },
+    "generator_version": "1.7.1"
+  }
+}

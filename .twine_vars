@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+import boto3
+
+ssm = boto3.client('ssm', region_name='us-east-1')
+params = ssm.get_parameters_by_path(Path='/private/twine', WithDecryption=True)['Parameters']
+
+params = {x['Name']:x['Value'] for x in params}
+
+print("export TWINE_USERNAME={}".format(params['/private/twine/username']))
+print("export TWINE_PASSWORD={}".format(params['/private/twine/password']))
+print("export TWINE_REPOSITORY_URL={}".format(params['/private/twine/repo_url']))
